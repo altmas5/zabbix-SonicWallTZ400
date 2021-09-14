@@ -1,0 +1,662 @@
+zabbix_export:
+  version: '5.4'
+  date: '2021-09-14T15:06:16Z'
+  groups:
+    -
+      uuid: c5381dc540504dbba10e2d300554e4cd
+      name: Firewall
+    -
+      uuid: 425fe83336e04d0c8999f730784108c5
+      name: 'My Company Templates'
+  templates:
+    -
+      uuid: d8467d5c4d0747898edaa48c921eca50
+      template: 'Sonicwall SNMP - Standard'
+      name: 'Sonicwall SNMP - Standard'
+      templates:
+        -
+          name: 'ICMP Ping'
+      groups:
+        -
+          name: Firewall
+        -
+          name: 'My Company Templates'
+      items:
+        -
+          uuid: 6ad39609d97d4adc8f67aa251923d17a
+          name: 'X0 Bytes In/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.1
+          key: ifInOctets.1
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: a9602b087d2041518969ff406bf7fc8f
+          name: 'X1 Bytes In/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.2
+          key: ifInOctets.2
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: 30bac644e9c74e3d92593c18a1ebd153
+          name: 'X2 Bytes In/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.3
+          key: ifInOctets.3
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: ca97699152c64d3dbb7a33dfbeab9086
+          name: 'X3 Bytes In/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.4
+          key: ifInOctets.4
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: 8edd7b14e47d4613b7da5069d854e71b
+          name: 'X4 Bytes In/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.5
+          key: ifInOctets.5
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: 367eec1d5bd3419f8cfa24d4864cc8fe
+          name: 'X5 Bytes In/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.6
+          key: ifInOctets.6
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: 6cab67fd60ae4f86bfe78ac33270e86c
+          name: 'X6 Bytes In/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.10.7
+          key: ifInOctets.7
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: bea7b4692742485b9165f12784e6db80
+          name: 'Status X0'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.2.1.2.2.1.8.1
+          key: ifOperStatus.1
+          delay: '60'
+          history: 30d
+          valuemap:
+            name: 'SNMP interface status (ifOperStatus)'
+          tags:
+            -
+              tag: Application
+              value: Availability
+        -
+          uuid: c82d238c8af44c4bb1a813c99ca1f874
+          name: 'Status X1'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.2.1.2.2.1.8.2
+          key: ifOperStatus.2
+          delay: '60'
+          history: 30d
+          valuemap:
+            name: 'SNMP interface status (ifOperStatus)'
+          tags:
+            -
+              tag: Application
+              value: Availability
+        -
+          uuid: 602da26a04694f11a990c7b5edb53775
+          name: 'Status X2'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.2.1.2.2.1.8.3
+          key: ifOperStatus.3
+          delay: '60'
+          history: 30d
+          valuemap:
+            name: 'SNMP interface status (ifOperStatus)'
+          tags:
+            -
+              tag: Application
+              value: Availability
+        -
+          uuid: 75b86055ea594d27803ab785c664d774
+          name: 'Status X3'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.2.1.2.2.1.8.4
+          key: ifOperStatus.4
+          delay: '60'
+          history: 30d
+          valuemap:
+            name: 'SNMP interface status (ifOperStatus)'
+          tags:
+            -
+              tag: Application
+              value: Availability
+        -
+          uuid: a5d89969fd2d41bd828c47c5c7d9e9bd
+          name: 'Status X4'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.2.1.2.2.1.8.5
+          key: ifOperStatus.5
+          delay: '60'
+          history: 30d
+          valuemap:
+            name: 'SNMP interface status (ifOperStatus)'
+          tags:
+            -
+              tag: Application
+              value: Availability
+        -
+          uuid: 8d18447a38aa462fbf0a3ec6e23e23ff
+          name: 'Status X5'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.2.1.2.2.1.8.6
+          key: ifOperStatus.6
+          delay: '60'
+          history: 30d
+          valuemap:
+            name: 'SNMP interface status (ifOperStatus)'
+          tags:
+            -
+              tag: Application
+              value: Availability
+        -
+          uuid: 77e65bb46f5d4dc19fd4ccf1605c652f
+          name: 'Status X6'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.2.1.2.2.1.8.7
+          key: ifOperStatus.7
+          delay: '60'
+          history: 30d
+          valuemap:
+            name: 'SNMP interface status (ifOperStatus)'
+          tags:
+            -
+              tag: Application
+              value: Availability
+        -
+          uuid: 06f63782db6544a584980c41c50b0962
+          name: 'X0 Bytes Out/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.1
+          key: ifOutOctets.1
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: 568e81d4a6784cb1af6f4c55d91ef613
+          name: 'X1 Bytes Out/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.2
+          key: ifOutOctets.2
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: aa39ff212fa04a70827e2b5730296d21
+          name: 'X2 Bytes Out/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.3
+          key: ifOutOctets.3
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: 7aa03a552d0448948aaabb7977d5c586
+          name: 'X3 Bytes Out/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.4
+          key: ifOutOctets.4
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: 1ea6fa047bbc4e6085d2c11c5a96b06e
+          name: 'X4 Bytes Out/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.5
+          key: ifOutOctets.5
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: e99361a1f34742afa0d5fe5f28b83239
+          name: 'X5 Bytes Out/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.6
+          key: ifOutOctets.6
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: d598a33065e74a15bd9d8036a3c990f8
+          name: 'X6 Bytes Out/sec'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.2.2.1.16.7
+          key: ifOutOctets.7
+          delay: '60'
+          history: 30d
+          units: bps
+          preprocessing:
+            -
+              type: CHANGE_PER_SECOND
+              parameters:
+                - ''
+            -
+              type: MULTIPLIER
+              parameters:
+                - '8'
+          tags:
+            -
+              tag: Application
+              value: Network
+        -
+          uuid: d420b0dba64647eb8494eb62a8f84e40
+          name: 'Simultaneous connections'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.8741.1.3.1.2.0
+          key: sonicCurrentConnCacheEntries.0
+          delay: '60'
+          history: 30d
+          tags:
+            -
+              tag: Application
+              value: Performance
+          triggers:
+            -
+              uuid: a3946f5127fa43e9baf7d20bb404aa30
+              expression: 'min(/Sonicwall SNMP - Standard/sonicCurrentConnCacheEntries.0,300s)>{$CONEXOES_ELEVADAS}'
+              name: 'Number of simultaneous connections is higher than {$CONEXOES_ELEVADAS}, current value is {ITEM.LASTVALUE}'
+              priority: WARNING
+        -
+          uuid: 4b81b4c98c754afc992e8da8f98e9ffd
+          name: 'CPU Load'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.8741.1.3.1.3.0
+          key: sonicCurrentCPUUtil.0
+          delay: '60'
+          history: 30d
+          units: '%'
+          description: 'CPU utilizada'
+          tags:
+            -
+              tag: Application
+              value: Performance
+          triggers:
+            -
+              uuid: 7df06f0b2419464fb26837fccf04f2ba
+              expression: 'avg(/Sonicwall SNMP - Standard/sonicCurrentCPUUtil.0,300s)>90'
+              name: 'CPU usage is higher than 90% over the last 5 minutes'
+              priority: WARNING
+        -
+          uuid: 4fc33571c4f448f4a78abf352e498146
+          name: RAM
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.8741.1.3.1.4.0
+          key: sonicCurrentRAMUtil.0
+          delay: '60'
+          history: 30d
+          units: '%'
+          description: 'Memória utilizada'
+          tags:
+            -
+              tag: Application
+              value: Performance
+          triggers:
+            -
+              uuid: 6159077d86974c7d8bd29c0dd6a2f234
+              expression: 'min(/Sonicwall SNMP - Standard/sonicCurrentRAMUtil.0,300s)>90'
+              name: 'Memory usage is higher than 90% over the last 5 minutes'
+              priority: WARNING
+        -
+          uuid: 422a8100fd6947b88b02f2d2246f3b34
+          name: 'Firmware Version'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.8741.2.1.1.3.0
+          key: sonicFirmwareVersion
+          delay: '3600'
+          history: 360d
+          trends: '0'
+          value_type: TEXT
+          tags:
+            -
+              tag: Application
+              value: Information
+        -
+          uuid: 8faa6d655c5b473ea63126ea083518ee
+          name: Model
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.8741.2.1.1.1.0
+          key: sonicModel
+          delay: '86400'
+          history: 30d
+          trends: '0'
+          value_type: TEXT
+          tags:
+            -
+              tag: Application
+              value: Information
+        -
+          uuid: 9a7d8fe7e65f48849f130cf7a9753d30
+          name: 'Serial Number'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.8741.2.1.1.2.0
+          key: sonicSerialNumber
+          delay: '3600'
+          history: 30d
+          trends: '0'
+          value_type: TEXT
+          tags:
+            -
+              tag: Application
+              value: Information
+        -
+          uuid: 99de376cc6ff4d4da8f6a245cb6945b1
+          name: 'Sonicwall Up Time'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.2.1.1.3.0
+          key: sysUpTime.0
+          delay: '60'
+          history: 30d
+          units: uptime
+          preprocessing:
+            -
+              type: MULTIPLIER
+              parameters:
+                - '0.01'
+          tags:
+            -
+              tag: Application
+              value: Availability
+          triggers:
+            -
+              uuid: 8b3160850ccd4dc2bb90ad2a1524ff2a
+              expression: 'last(/Sonicwall SNMP - Standard/sysUpTime.0)<800'
+              name: 'Firewall has been rebooted'
+              priority: HIGH
+      macros:
+        -
+          macro: '{$CONEXOES_ELEVADAS}'
+          value: '7000'
+        -
+          macro: '{$MILISEGUNDOS}'
+          value: '50'
+        -
+          macro: '{$PORCENTAGEM_DE_PERDA}'
+          value: '10'
+        -
+          macro: '{$SNMP_COMMUNITY}'
+          value: public
+        -
+          macro: '{$TEMPO_PERDA_DE_PACOTES}'
+          value: '300'
+        -
+          macro: '{$TEMPO_REPOSTA}'
+          value: '300'
+        -
+          macro: '{$TEMPO_SEM_RESPONDER}'
+          value: '180'
+      dashboards:
+        -
+          uuid: 1accf718b1864f76bcf04904e74b68a5
+          name: ICMP
+          pages:
+            - {  }
+      valuemaps:
+        -
+          uuid: 1f948af3646b420795793079f179a1e5
+          name: 'SNMP interface status (ifOperStatus)'
+          mappings:
+            -
+              value: '1'
+              newvalue: up
+            -
+              value: '2'
+              newvalue: down
+            -
+              value: '3'
+              newvalue: testing
+            -
+              value: '4'
+              newvalue: unknown
+            -
+              value: '5'
+              newvalue: dormant
+            -
+              value: '6'
+              newvalue: notPresent
+            -
+              value: '7'
+              newvalue: lowerLayerDown
+  graphs:
+    -
+      uuid: 66c9360527e143f89eb802ece65b57f4
+      name: 'CPU Load %'
+      show_work_period: 'NO'
+      show_triggers: 'NO'
+      graph_items:
+        -
+          drawtype: GRADIENT_LINE
+          color: '009900'
+          item:
+            host: 'Sonicwall SNMP - Standard'
+            key: sonicCurrentCPUUtil.0
+    -
+      uuid: 730c93841f5d450481792c094a1a4367
+      name: 'RAM %'
+      show_work_period: 'NO'
+      show_triggers: 'NO'
+      ymin_type_1: FIXED
+      ymax_type_1: FIXED
+      graph_items:
+        -
+          color: EE0000
+          item:
+            host: 'Sonicwall SNMP - Standard'
+            key: sonicCurrentRAMUtil.0
+    -
+      uuid: c44c1efed1784087ad65872a5fcef3fa
+      name: 'Simultaneous connections'
+      yaxismax: '8000'
+      ymin_type_1: FIXED
+      ymax_type_1: FIXED
+      graph_items:
+        -
+          drawtype: GRADIENT_LINE
+          color: 0000CC
+          item:
+            host: 'Sonicwall SNMP - Standard'
+            key: sonicCurrentConnCacheEntries.0
+    -
+      uuid: 2872b2c92af14209907d84dbd68762e2
+      name: 'WAN Default Port'
+      graph_items:
+        -
+          color: 1A7C11
+          item:
+            host: 'Sonicwall SNMP - Standard'
+            key: ifInOctets.2
+        -
+          sortorder: '1'
+          color: F63100
+          item:
+            host: 'Sonicwall SNMP - Standard'
+            key: ifOutOctets.2
